@@ -1,3 +1,139 @@
 ---
+// src/components/ui/TargetCard.astro
+interface Props {
+    title: string;
+    description?: string;
+    color: 'yellow' | 'purple' | 'darkblue' | 'lightblue';
+    col?: number;
+    imageUrl?: string; // <--- 1. On déclare la prop ici
+}
 
+const {
+    title,
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore.",
+    color,
+    col = 4, // Par défaut, prend 4 colonnes (donc 3 cartes sur une ligne de 12)
+    imageUrl // <--- 2. On la récupère
+} = Astro.props;
+
+// On réutilise tes couleurs de charte
+const bgColors = {
+    yellow: '#FFEC83',
+    purple: '#E5BDED',
+    darkblue: '#283276',
+    lightblue: '#7E8DD2'
+};
+
+const textColors = {
+    yellow: '#283276',
+    purple: '#283276',
+    darkblue: '#ffffff',
+    lightblue: '#ffffff'
+};
 ---
+
+<div
+    class="target-card"
+    style={`grid-column: span ${col}; --card-bg: ${bgColors[color]}; --card-text: ${textColors[color]};`}
+>
+    <img
+        src={`/images/${title.toLowerCase()}.jpg`}
+        alt={`Illustration pour ${title}`}
+        class="bg-image"
+    />
+
+    <div class="content-overlay">
+        <h3>{title}</h3>
+
+        <div class="description-wrapper">
+            <div class="description-inner">
+                <p>{description}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .target-card {
+        position: relative;
+        border-radius: 18px; /* Toujours le standard Worklouder */
+        overflow: hidden;
+        height: 400px; /* On fixe une belle hauteur pour que l'image respire */
+        border: 1px solid rgba(40, 50, 118, 0.08);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; /* Pousse le contenu vers le bas */
+    }
+
+    /* IMAGE DE FOND */
+    .bg-image {
+        position: absolute;
+        inset: 0;
+        width: 100%; /* Important pour l'image */
+        height: 100%; /* Important pour l'image */
+        object-fit: cover; /* L'image remplit la boîte sans se déformer */
+        object-position: center;
+        background-color: rgba(40, 50, 118, 0.03); /* Reste en fallback */
+        z-index: 1;
+        transition: transform 0.5s ease;
+    }
+
+    /* BLOC COLORÉ EN BAS */
+    .content-overlay {
+        position: relative;
+        z-index: 2;
+        background-color: var(--card-bg);
+        color: var(--card-text);
+        padding: 24px;
+        transition: padding 0.3s ease;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-family: 'Funnel Display', sans-serif;
+        letter-spacing: -0.03em;
+    }
+
+    /* ANIMATION DU TEXTE (L'astuce du 0fr) */
+    .description-wrapper {
+        display: grid;
+        grid-template-rows: 0fr; /* Texte caché par défaut */
+        transition: grid-template-rows 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .description-inner {
+        overflow: hidden;
+    }
+
+    p {
+        margin: 12px 0 0 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+        opacity: 0;
+        transform: translateY(10px); /* Le texte part légèrement du bas */
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    /* --- LES EFFETS AU SURVOL --- */
+
+    /* 1. L'image de fond zoome très légèrement */
+    .target-card:hover .bg-image {
+        transform: scale(1.05);
+    }
+
+    /* 2. Le texte se déploie */
+    .target-card:hover .description-wrapper {
+        grid-template-rows: 1fr; /* Révèle le texte */
+    }
+
+    /* 3. Le texte apparaît en fondu */
+    .target-card:hover p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) { .target-card { grid-column: span 6 !important; } }
+    @media (max-width: 768px) { .target-card { grid-column: span 12 !important; height: 300px; } }
+</style>

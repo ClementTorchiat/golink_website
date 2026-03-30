@@ -8,21 +8,11 @@
 <style>
     .bento-grid {
         display: grid;
-        /* On crée une grille invisible de 12 colonnes */
         grid-template-columns: repeat(12, 1fr);
-        gap: 1.5rem; /* L'espace entre les boîtes */
-        max-width: 1400px; /* La même largeur que ton header */
-        margin: 2rem auto;
-        padding: 0 2rem;
+        gap: 10px;
+        width: 100%; /* Il remplit simplement son conteneur */
     }
 
-    /* Responsive : Sur tablette, on passe sur 6 colonnes */
-    @media (max-width: 1024px) {
-        .bento-grid { grid-template-columns: repeat(6, 1fr); }
-    }
-
-    /* Responsive : Sur mobile, on empile tout */
-    @media (max-width: 768px) {
-        .bento-grid { display: flex; flex-direction: column; }
-    }
+    @media (max-width: 1024px) { .bento-grid { grid-template-columns: repeat(6, 1fr); } }
+    @media (max-width: 768px) { .bento-grid { display: flex; flex-direction: column; } }
 </style>

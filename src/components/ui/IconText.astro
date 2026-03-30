@@ -1,3 +1,70 @@
 ---
+// src/components/ui/IconText.astro
+interface Props {
+    title: string;
+    // On ajoute une prop description (optionnelle, avec le Lorem Ipsum par défaut)
+    description?: string;
+}
 
+const {
+    title,
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+} = Astro.props;
 ---
+
+<div class="icon-text">
+    <div class="icon-container">
+        <slot name="icon" />
+    </div>
+    <div class="text-content">
+        <h3 class="title">{title}</h3>
+        <p class="description">{description}</p>
+    </div>
+</div>
+
+<style>
+    .icon-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .icon-container {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background-color: rgba(40, 50, 118, 0.04);
+        border: 1px solid rgba(40, 50, 118, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #283276;
+    }
+
+    .icon-container :global(svg) {
+        width: 24px;
+        height: 24px;
+        stroke-width: 2px;
+    }
+
+    .text-content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px; /* Espace entre le H3 et le texte */
+    }
+
+    .title {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #283276;
+        line-height: 1.3;
+    }
+
+    .description {
+        margin: 0;
+        font-size: 0.95rem;
+        color: rgba(40, 50, 118, 0.7); /* Bleu foncé légèrement transparent pour être moins agressif */
+        line-height: 1.5;
+    }
+</style>
