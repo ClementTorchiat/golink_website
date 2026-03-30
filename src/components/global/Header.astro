@@ -1,0 +1,156 @@
+---
+// src/components/global/Header.astro
+const currentPath = Astro.url.pathname;
+---
+
+<header class="site-header">
+    <div class="header-container">
+
+        <div class="logo-col">
+            <a href="/" class="logo">GOLink</a>
+        </div>
+
+        <nav class="pill-nav">
+            <div class="active-pill-bg"></div>
+
+            <ul class="nav-links">
+                <li><a href="/" class={currentPath === "/" ? "active" : ""}>Accueil</a></li>
+                <li><a href="/fonctionnement" class={currentPath === "/fonctionnement" ? "active" : ""}>Fonctionnement</a></li>
+                <li><a href="/avantages" class={currentPath === "/avantages" ? "active" : ""}>Avantages</a></li>
+                <li><a href="/faq" class={currentPath === "/faq" ? "active" : ""}>FAQ</a></li>
+            </ul>
+        </nav>
+
+        <div class="btn-col">
+            <a href="#download" class="download-app">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15V3M12 15L8 11M12 15L16 11M3 18C3 19.1046 3.89543 20 5 20H19C20.1046 20 21 19.1046 21 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                App
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<style>
+    .site-header {
+        font-family: 'Funnel Sans', sans-serif;
+        padding: 20px 0; /* Padding réduit */
+        position: fixed; /* Il flotte au-dessus du hero */
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+    }
+
+    .header-container {
+        max-width: 1380px; /* Aligné sur Worklouder */
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+        padding: 0 10px; /* Marges serrées */
+    }
+
+    .logo-col { display: flex; justify-content: flex-start; }
+    .btn-col { display: flex; justify-content: flex-end; }
+
+    .logo {
+        font-family: 'Funnel Display', sans-serif;
+        font-weight: bold;
+        font-size: 1.25rem;
+        color: #000000; /* Monotone blanc sur fond hero */
+        text-decoration: none;
+        letter-spacing: -0.05em;
+    }
+
+    /* LA PILULE CENTRALE (Plus compacte) */
+    .pill-nav {
+        position: relative;
+        backdrop-filter: blur(10px);
+        background-color: rgba(0, 0, 0, 0.1); /* Plus discret */
+        border-radius: 18px; /* Standard 18px */
+        padding: 3px;
+        display: inline-flex;
+        /*border: 1px solid rgba(0, 0, 0, 0.15);*/ /* Bordure technique fine */
+    }
+
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.6); /* Monotone */
+        padding: 8px 16px; /* Padding réduit */
+        border-radius: 18px;
+        font-weight: 500;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+        display: block;
+    }
+
+    /* ACCENTUATION JAUNE (Uniquement sur l'actif) */
+    .active-pill-bg {
+        position: absolute;
+        top: 3px;
+        bottom: 3px;
+        left: 0;
+        background-color: #FFEC83; /* Ton jaune */
+        border-radius: 14px;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        opacity: 0;
+    }
+
+    /* Couleur du texte quand il est au-dessus du jaune */
+    .nav-links a.active {
+        color: #000000; /* Ton bleu foncé principal */
+    }
+
+    /* BOUTON TÉLÉCHARGER (Compact et Accentué) */
+    .download-app {
+        background-color: #FFEC83; /* Ton jaune */
+        color: #000000;
+        text-decoration: none;
+        padding: 8px 16px; /* Compact */
+        border-radius: 18px; /* Standard 18px */
+        font-weight: 600;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: transform 0.2s ease;
+    }
+    .download-app:hover { transform: translateY(-1px); }
+</style>
+
+<script>
+    function initNav() {
+        const nav = document.querySelector('.pill-nav');
+        const pill = document.querySelector('.active-pill-bg') as HTMLElement;
+        const links = document.querySelectorAll('.nav-links a');
+        if (!nav || !pill) return;
+        let activeLink = document.querySelector('.nav-links a.active') as HTMLElement;
+        if (!activeLink) return;
+        const movePillTo = (target: HTMLElement) => {
+            const navRect = nav.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect(); pill.style.width = `${targetRect.width}px`; pill.style.transform = `translateX(${targetRect.left - navRect.left}px)`;
+        };
+        pill.style.transition = 'none';
+        movePillTo(activeLink);
+        pill.style.opacity = '1';
+        void pill.offsetWidth;
+        pill.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), width 0.3s cubic-bezier(0.25, 1, 0.5, 1)';
+        links.forEach(link => { link.addEventListener('mouseenter', (e) => movePillTo(e.target as HTMLElement)); });
+        nav.addEventListener('mouseleave', () => movePillTo(activeLink));
+    }
+    document.addEventListener('astro:page-load', initNav);
+</script>

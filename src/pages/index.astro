@@ -1,11 +1,103 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/global/Header.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="GOLink - Le bus modulaire">
+    <Header slot="header" />
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="text-block">
+                    <h1>GOLink<br>Le bus de demain.</h1>
+                    <p>Le concept de bus modulaire optimisé pour les villes intelligentes.</p>
+                </div>
+
+                <div class="image-block">
+                    <div class="image-placeholder">
+                        BUS MODULE MOCKUP
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="short-section">
+        <p class="short-text">Découvrez GoLink : le bus urbain autonome, 100 % électrique et modulable. Disponible 24h/24, il ajuste sa taille en temps réel selon l'affluence pour mettre fin aux trajets à vide. Une mobilité sur-mesure, écologique et toujours à votre service.</p>
+    </section>
+
+</MainLayout>
+
+<style>
+    .hero-section {
+        padding: 10px; /* Ta demande */
+        width: 100vw;
+        /* On force la page à au moins remplir l'écran pour le hero */
+        min-height: 100vh;
+    }
+
+    .hero-container {
+        background-color: #ffffff; /* Ton bleu foncé principal, monotone */
+        color: #000000;
+        height: calc(100vh - 20px); /* 100vh moins padding haut/bas de 10px */
+        border-radius: 18px; /* Standard 18px */
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        align-items: flex-end; /* Texte en bas comme Worklouder */
+        padding: 40px; /* Espacement interne compact */
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 1380px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px; /* Gap compact */
+        align-items: flex-end;
+    }
+
+    .text-block {
+        max-width: 500px;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        margin: 0 0 10px 0;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: rgba(0, 0, 0, 0.8);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .image-placeholder {
+        background-color: rgba(255, 255, 255, 0.05); /* Monotone technique */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        height: 300px;
+        border-radius: 18px; /* Standard 18px */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: bold;
+    }
+
+    .short-section {
+        margin-top: 64px;
+        margin-bottom: 64px;
+    }
+
+    .short-text {
+        font-size: 1.1rem;
+        color: #000000;
+        width: 40%;
+        text-align: center;
+        margin: auto;
+    }
+</style>

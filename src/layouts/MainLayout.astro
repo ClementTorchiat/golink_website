@@ -1,0 +1,43 @@
+---
+// src/layouts/MainLayout.astro
+import { ClientRouter } from 'astro:transitions';
+const { title = "GOLink" } = Astro.props;
+---
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+    <ClientRouter />
+
+    <style is:global>
+        /* CSS GLOBAL DUREI */
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background-color: #e8e8e8; /* Fond monotone blanc */
+            font-family: 'Funnel Sans', sans-serif;
+            color: #283276;
+        }
+
+        /* Typographies */
+        h1, h2, h3 { font-family: 'Funnel Display', sans-serif; font-weight: bold; }
+    </style>
+</head>
+<body>
+<slot name="header" />
+
+<main id="main-content">
+    <slot />
+</main>
+</body>
+</html>
+
+<style>
+    /* GESTION DU CADRE GLOBAL DE 10PX */
+    #main-content {
+
+    }
+</style>

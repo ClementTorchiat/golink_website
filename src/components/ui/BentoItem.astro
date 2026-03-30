@@ -1,0 +1,69 @@
+---
+// src/components/ui/BentoItem.astro
+
+// On définit les options qu'on peut passer à notre composant
+interface Props {
+    col?: number; // Nombre de colonnes (sur 12)
+    row?: number; // Nombre de lignes en hauteur
+    color?: 'white' | 'yellow' | 'purple' | 'darkblue' | 'lightblue';
+}
+
+// Par défaut, un bloc prend 12 colonnes (toute la largeur) et fond blanc
+const { col = 12, row = 1, color = 'white' } = Astro.props;
+
+// Les couleurs exactes de ton PDF (Page 5)
+const bgColors = {
+    white: '#ffffff',
+    yellow: '#FFEC83',    // Secondaire 2
+    purple: '#E5BDED',    // Secondaire 1
+    darkblue: '#283276',  // Principale
+    lightblue: '#7E8DD2'  // Secondaire 3
+};
+
+// On adapte la couleur du texte pour que ça reste lisible
+const textColors = {
+    white: '#283276',
+    yellow: '#283276',
+    purple: '#283276',
+    darkblue: '#ffffff',
+    lightblue: '#ffffff'
+};
+---
+
+<div
+        class="bento-item"
+        style={`
+    grid-column: span ${col}; 
+    grid-row: span ${row}; 
+    background-color: ${bgColors[color]}; 
+    color: ${textColors[color]};
+  `}
+>
+    <slot />
+</div>
+
+<style>
+    .bento-item {
+        border-radius: 32px; /* Les fameux gros coins arrondis */
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        overflow: hidden; /* Pour que les images ne débordent pas des coins */
+
+        /* Une ombre hyper douce pour détacher du fond gris */
+        box-shadow: 0 10px 40px rgba(40, 50, 118, 0.04);
+        transition: transform 0.3s ease;
+    }
+
+    /* Petit effet sympa au survol */
+    .bento-item:hover {
+        transform: translateY(-4px);
+    }
+
+    /* Responsive : on force les blocs à prendre toute la ligne sur tablette/mobile */
+    @media (max-width: 1024px) {
+        .bento-item { grid-column: span 6 !important; }
+    }
+</style>
