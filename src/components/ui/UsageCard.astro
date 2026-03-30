@@ -1,0 +1,80 @@
+---
+// src/components/ui/UsageCard.astro
+interface Props {
+    title: string;
+    description: string;
+    modules: number; // Le nombre de bus assemblés
+}
+
+const { title, description, modules } = Astro.props;
+---
+
+<div class="usage-card bento-style">
+    <div class="modules-indicator">
+        {Array.from({ length: modules }).map((_, i) => (
+                <div class="module-block"></div>
+        ))}
+    </div>
+
+    <h3>{title}</h3>
+    <p>{description}</p>
+</div>
+
+<style>
+    .usage-card {
+        background-color: #ffffff;
+        border-radius: 18px;
+        border: 1px solid rgba(40, 50, 118, 0.08);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .usage-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px rgba(40, 50, 118, 0.05);
+    }
+
+    /* Le style des petits rectangles connectés */
+    .modules-indicator {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .module-block {
+        width: 32px;
+        height: 16px;
+        background-color: #283276;
+        border-radius: 4px;
+        position: relative;
+    }
+
+    /* Le petit trait jaune qui les connecte (sauf pour le premier) */
+    .module-block:not(:first-child)::before {
+        content: '';
+        position: absolute;
+        left: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 8px;
+        height: 2px;
+        background-color: #FFEC83;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #283276;
+    }
+
+    p {
+        margin: 0;
+        color: rgba(40, 50, 118, 0.7);
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+</style>
