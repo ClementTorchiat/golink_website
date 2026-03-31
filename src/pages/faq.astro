@@ -1,3 +1,328 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/global/Header.astro';
 ---
+
+<MainLayout title="FAQ - GoLink">
+    <Header slot="header" />
+
+    <section class="faq-section">
+        <div class="faq-container bento-style">
+
+            <div class="faq-header">
+                <h1 class="faq-title">Foire Aux Questions</h1>
+                <p class="faq-subtitle">Tout ce que vous devez savoir sur le futur de la mobilité urbaine à Montbéliard et au-delà.</p>
+            </div>
+
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Qu'est-ce que le projet GoLink ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>GoLink est un concept de transport urbain innovant pensé initialement pour la ville de Montbéliard. Il s'agit d'un système de bus autonome, entièrement électrique et modulable, conçu pour offrir un service de mobilité flexible et disponible 24h/24, y compris la nuit ou dans les zones habituellement peu desservies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Pourquoi dit-on que le bus est "modulable" ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>La structure du bus s'adapte en temps réel à la demande des passagers. En cas de forte affluence, des modules supplémentaires s'accrochent automatiquement pour augmenter la capacité d'accueil. À l'inverse, lors des heures creuses, le bus circule dans un format très compact (par exemple, des modules de 2 personnes). Cela permet d'éviter de faire rouler de grands bus à moitié vides, réduisant ainsi la consommation d'énergie et la pollution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Y a-t-il un chauffeur à bord du bus ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Non, les bus GoLink sont entièrement autonomes : ils n'ont ni volant ni pédales. La conduite est assurée par une intelligence artificielle qui analyse son environnement grâce à des caméras, des radars et des scanners laser (LiDAR) pour détecter les piétons et les obstacles. Toutefois, pour des raisons de sécurité et pour respecter le cadre légal, un opérateur à distance surveille le bus et peut intervenir si nécessaire.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Comment réserver ou utiliser un bus GoLink ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Tout se passe via l'application mobile GoLink, qui s'adapte à trois profils d'utilisateurs :</p>
+                            <ul>
+                                <li><strong>Les usagers réguliers :</strong> ils renseignent leur planning hebdomadaire une seule fois et l'application anticipe leurs trajets.</li>
+                                <li><strong>Les usagers occasionnels :</strong> ils indiquent leur besoin la veille, garantissant un bus à l'heure prévue.</li>
+                                <li><strong>Les touristes ou usagers spontanés :</strong> ils peuvent demander un trajet à l'instant T sans planification préalable, l'application les redirigeant vers un lieu d'attente et le module le plus proche.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Le service est-il accessible aux personnes à mobilité réduite ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Absolument. Les bus sont conçus avec des places réservées pour les fauteuils roulants, des rampes d'accès automatiques et des portes larges. De plus, l'application permet d'indiquer spécifiquement ses besoins liés à un handicap (moteur, visuel ou cognitif) afin que le système propose un itinéraire optimisé et réserve la cabine appropriée.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Les enfants peuvent-ils voyager seuls ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Les enfants de moins de 12 ans doivent obligatoirement être accompagnés d'un adulte. En revanche, les adolescents âgés de 12 à 16 ans sont autorisés à voyager seuls, à condition de disposer d'une autorisation parentale validée sur l'application.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Est-il possible de voyager avec des bagages ou un animal de compagnie ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Oui, la modularité du projet permet d'avoir des modules spécifiquement aménagés pour transporter des bagages volumineux, des sacs de courses ou encore pour accueillir des animaux de compagnie en toute sécurité.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Mes données personnelles de géolocalisation sont-elles protégées ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>Oui. Les données de parcours sont rendues anonymes et agrégées : elles servent uniquement à optimiser le réseau et le trafic de la flotte, sans jamais être utilisées à des fins commerciales. Elles sont conservées localement sur votre téléphone et vous gardez le contrôle total (suppression ou modification) en stricte conformité avec les règles du RGPD.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        En quoi GoLink est-il respectueux de l'environnement ?
+                        <span class="faq-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="answer-content">
+                            <p>L'écologie est au cœur du projet. En plus d'être 100 % électrique, son intelligence prédictive élimine les trajets inutiles de véhicules vides. Le rendement écologique est excellent, avec des émissions comprises entre 39 et 78 g de CO2 par passager-kilomètre, un niveau bien inférieur aux moyens de transport traditionnels thermiques.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    :global(body) { background-color: #e8e8e8; margin: 0; padding: 0; }
+
+    .bento-style {
+        background-color: #ffffff;
+        border-radius: 18px;
+        border: 1px solid rgba(40, 50, 118, 0.08);
+    }
+
+    .faq-section {
+        width: 100vw;
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    /* 🔴 CORRECTION : Le conteneur prend maintenant toute la largeur dispo */
+    .faq-container {
+        width: 100%;
+        padding: 60px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+        box-sizing: border-box;
+    }
+
+    /* En-tête de la FAQ */
+    .faq-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .faq-title {
+        font-size: 3.5rem; /* Légèrement grossi pour coller au reste du site */
+        color: #283276;
+        margin: 0 0 16px 0;
+        letter-spacing: -0.04em;
+    }
+
+    .faq-subtitle {
+        font-size: 1.15rem;
+        color: rgba(40, 50, 118, 0.7);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    /* 🔴 CORRECTION : Liste en 2 colonnes façon "maçonnerie" */
+    .faq-list {
+        column-count: 2; /* 2 colonnes */
+        column-gap: 24px; /* Espace entre les colonnes */
+    }
+
+    /* Chaque item de la FAQ */
+    .faq-item {
+        border: 1px solid rgba(40, 50, 118, 0.08);
+        border-radius: 12px;
+        background-color: #fafafa;
+        overflow: hidden;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+
+        /* Propriétés vitales pour le fonctionnement en colonnes */
+        break-inside: avoid; /* Empêche une question d'être coupée entre 2 colonnes */
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 24px; /* Remplace le gap */
+    }
+
+    .faq-item:hover {
+        background-color: #ffffff;
+        border-color: rgba(40, 50, 118, 0.2);
+    }
+
+    /* Le bouton Question */
+    .faq-question {
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: none;
+        padding: 24px 30px;
+        font-size: 1.15rem;
+        color: #283276;
+        font-weight: 600;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        font-family: inherit;
+        transition: color 0.3s ease;
+    }
+
+    /* L'icône "+" */
+    .faq-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        color: #283276;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* La zone de réponse (cachée par défaut) */
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .answer-content {
+        padding: 0 30px 30px 30px;
+    }
+
+    .answer-content p {
+        margin: 0 0 16px 0;
+        color: rgba(40, 50, 118, 0.7);
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    .answer-content p:last-child {
+        margin-bottom: 0;
+    }
+
+    .answer-content ul {
+        margin: 0;
+        padding-left: 20px;
+        color: rgba(40, 50, 118, 0.7);
+        line-height: 1.6;
+        font-size: 1.05rem;
+    }
+
+    .answer-content li {
+        margin-bottom: 8px;
+    }
+    .answer-content li:last-child {
+        margin-bottom: 0;
+    }
+
+    /* ÉTATS ACTIFS (Quand l'accordéon est ouvert) */
+    .faq-item.is-open {
+        background-color: #ffffff;
+        border-color: rgba(40, 50, 118, 0.2);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+    }
+
+    /* On tourne le "+" de 45 degrés pour en faire une croix "x" */
+    .faq-item.is-open .faq-icon {
+        transform: rotate(45deg);
+        color: #E5BDED; /* Vert écologique */
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1024px) {
+        .faq-list { column-count: 1; /* On repasse sur 1 seule colonne sur tablette/mobile */ }
+        .faq-container { padding: 40px; }
+    }
+
+    @media (max-width: 768px) {
+        .faq-container { padding: 30px 20px; }
+        .faq-title { font-size: 2.2rem; }
+        .faq-question { padding: 20px; font-size: 1.05rem; }
+        .answer-content { padding: 0 20px 20px 20px; }
+    }
+</style>
+
+<script>
+    function initAccordion() {
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const questionBtn = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+
+            questionBtn.addEventListener('click', () => {
+                const isOpen = item.classList.contains('is-open');
+
+                // Optionnel : Si tu veux que l'ouverture d'une question ferme les autres
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('is-open');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                // Si c'était fermé, on l'ouvre (en calculant la vraie hauteur du contenu)
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+    }
+
+    // Initialisation compatible avec les View Transitions d'Astro
+    document.addEventListener('astro:page-load', initAccordion);
+</script>
