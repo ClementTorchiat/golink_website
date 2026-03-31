@@ -7,8 +7,10 @@ import Button from './Button.astro';
     <div class="footer-bento">
 
         <div class="footer-main">
-            <h2>Prêt à repenser<br>la mobilité urbaine ?</h2>
-            <p>GOLink est actuellement en phase de concept. Suivez notre évolution vers les villes de demain.</p>
+            <div class="cta-stack">
+                <h2>Prêt à repenser<br>la mobilité urbaine ?</h2>
+                <p>GOLink est actuellement en phase de concept. Suivez notre évolution vers les villes de demain.</p>
+            </div>
             <div class="action-buttons">
                 <Button href="/fonctionnement" variant="primary">Découvrir la techno</Button>
             </div>
@@ -21,18 +23,23 @@ import Button from './Button.astro';
                 <li><a href="/fonctionnement">Fonctionnement</a></li>
                 <li><a href="/avantages">Avantages</a></li>
                 <li><a href="/faq">FAQ</a></li>
+                <li><a href="/contact">Contact & Équipe</a></li>
             </ul>
         </div>
 
-        <div class="footer-legal">
-            <div class="contact">
-                <h4>Contact</h4>
-                <a href="mailto:hello@golink.fr">hello@golink.fr</a>
+        <div class="footer-contact">
+            <h4>Contactez l'équipe</h4>
+            <div class="emails-list">
+                <a href="mailto:clement.torchiat@edu.univ-fcomte.fr">clement.torchiat@edu.univ-fcomte.fr</a>
+                <a href="mailto:aline.rose@edu.univ-fcomte.fr">aline.rose@edu.univ-fcomte.fr</a>
+                <a href="mailto:ambre.monamy@edu.univ-fcomte.fr">ambre.monamy@edu.univ-fcomte.fr</a>
+                <a href="mailto:tania.andre@edu.univ-fcomte.fr">tania.andre@edu.univ-fcomte.fr</a>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 GOLink.</p>
-                <p>Projet modulaire.</p>
-            </div>
+        </div>
+
+        <div class="copyright">
+            <p>&copy; 2026 GOLink.</p>
+            <p>Projet modulaire.</p>
         </div>
 
     </div>
@@ -48,31 +55,38 @@ import Button from './Button.astro';
 
     /* La Bento blanche qui s'aligne parfaitement avec le Hero */
     .footer-bento {
-        width: 100%; /* S'étire à 100% de l'espace disponible (moins les 10px de padding du parent) */
+        width: 100%;
         background-color: #ffffff;
         border: 1px solid rgba(40, 50, 118, 0.08); /* Bordure technique standard */
         border-radius: 18px;
-        padding: 40px;
+        padding: 60px; /* Padding généreux pour l'équilibre */
 
         display: grid;
-        grid-template-columns: 2fr 1fr;
-        grid-template-rows: auto auto;
+        grid-template-columns: 2fr 1fr; /* Structure Bento standard (Gauche large, Droite fine) */
+        grid-template-rows: auto auto; /* Deux lignes principales */
         gap: 40px;
     }
 
-    /* LE BLOC PRINCIPAL */
+    /* LE BLOC PRINCIPAL CORRIGÉ (STACKÉ) */
     .footer-main {
         grid-column: 1 / 2;
-        grid-row: 1 / 3;
+        grid-row: 1 / 2; /* Désormais seulement sur la première ligne */
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start; /* 🔴 Plus de space-between */
+        gap: 32px; /* Espacement fixe entre le texte et le bouton */
+    }
+
+    .cta-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 16px; /* Espacement entre le titre et le texte */
     }
 
     .footer-main h2 {
         color: #283276;
         font-size: 3rem;
-        margin: 0 0 16px 0;
+        margin: 0;
         line-height: 1.1;
         letter-spacing: -0.03em;
     }
@@ -80,8 +94,8 @@ import Button from './Button.astro';
     .footer-main p {
         color: rgba(40, 50, 118, 0.7); /* Texte légèrement transparent */
         font-size: 1.1rem;
-        max-width: 400px;
-        margin: 0 0 32px 0;
+        max-width: 400px; /* Conserve le formatage du texte */
+        margin: 0;
         line-height: 1.5;
     }
 
@@ -94,7 +108,7 @@ import Button from './Button.astro';
         color: rgba(40, 50, 118, 0.4); /* Gris technique */
     }
 
-    /* LA NAVIGATION */
+    /* LA NAVIGATION (Top-Right) */
     .footer-nav {
         grid-column: 2 / 3;
         grid-row: 1 / 2;
@@ -118,36 +132,50 @@ import Button from './Button.astro';
     }
 
     .footer-nav a:hover {
-        color: #FFEC83; /* Accent jaune au survol */
+        color: #4CAF50; /* Accent vert au survol (cohérence écologique) */
     }
 
-    /* LA PARTIE LÉGALE / CONTACT */
-    .footer-legal {
-        grid-column: 2 / 3;
-        grid-row: 2 / 3;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        gap: 32px;
-        border-top: 1px solid rgba(40, 50, 118, 0.08); /* Ligne grise fine */
-        padding-top: 24px;
-    }
-
-    .contact a {
-        color: #283276;
-        text-decoration: none;
-        font-size: 1.1rem;
-        font-weight: 500;
-    }
-
-    .contact a:hover {
-        text-decoration: underline;
+    /* LE COPYRIGHT CORRIGÉ (Bottom-Left) */
+    .copyright {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3; /* Désormais ancré en bas à gauche */
+        align-self: flex-end; /* Force l'ancrage en bas du bento */
+        text-align: left;
     }
 
     .copyright p {
         margin: 4px 0;
         color: rgba(40, 50, 118, 0.5);
         font-size: 0.9rem;
+    }
+
+    /* LA PARTIE CONTACT CORRIGÉE (Bottom-Right) */
+    .footer-contact {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+        align-self: flex-end; /* Force l'ancrage en bas du bento */
+        border-top: none; /* 🔴 Suppression de la ligne fine technique */
+        padding-top: 0;
+    }
+
+    .emails-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .emails-list a {
+        color: #283276;
+        text-decoration: none;
+        font-size: 0.85rem; /* Plus petit pour les mails longs */
+        font-weight: 500;
+        transition: opacity 0.2s ease;
+        opacity: 0.6;
+    }
+
+    .emails-list a:hover {
+        opacity: 1;
+        text-decoration: underline;
     }
 
     /* Responsive Mobile */
@@ -157,9 +185,13 @@ import Button from './Button.astro';
             gap: 32px;
             padding: 24px;
         }
+        /* Pile mobile classique : Main -> Nav -> Contact -> Copyright */
         .footer-main { grid-column: 1 / 2; grid-row: 1 / 2; }
         .footer-nav { grid-column: 1 / 2; grid-row: 2 / 3; }
-        .footer-legal { grid-column: 1 / 2; grid-row: 3 / 4; }
+        .footer-contact { grid-column: 1 / 2; grid-row: 3 / 4; align-self: flex-start; text-align: left;}
+        .copyright { grid-column: 1 / 2; grid-row: 4 / 5; align-self: flex-start; }
+
         .footer-main h2 { font-size: 2rem; }
+        .emails-list a { font-size: 0.75rem; }
     }
 </style>

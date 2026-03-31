@@ -1,0 +1,222 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/global/Header.astro';
+---
+
+<MainLayout title="Contact & Équipe - GoLink">
+    <Header slot="header" />
+
+    <section class="team-section">
+
+        <div class="team-header-bento bento-style">
+            <h1 class="team-title">L'équipe derrière GoLink</h1>
+            <p class="team-subtitle">Quatre étudiants passionnés par l'innovation urbaine, la technologie et le design, unis pour repenser la mobilité de demain à Montbéliard et au-delà.</p>
+        </div>
+
+        <div class="team-grid">
+
+            <div class="team-member-card bento-style">
+                <div class="member-avatar">
+                    <img src="/images/profil_sans_perspective.png" alt="Clément Torchiat" />
+                </div>
+                <div class="member-info">
+                    <h2>Clément Torchiat</h2>
+                    <h3 class="member-role">UX/UI Designer & Développeur</h3>
+                    <p class="member-desc">Conçoit l'architecture de l'application et les interfaces utilisateurs pour garantir une expérience fluide, tout en assurant le développement technique du site.</p>
+                    <a href="mailto:clement.torchiat@edu.univ-fcomte.fr" class="member-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        clement.torchiat
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-member-card bento-style">
+                <div class="member-avatar">
+                    <img src="" alt="Aline Rose" />
+                </div>
+                <div class="member-info">
+                    <h2>Aline Rose</h2>
+                    <h3 class="member-role">Cheffe de projet & Modélisatrice 3D</h3>
+                    <p class="member-desc">Pilote la vision globale du projet GoLink et donne vie aux futurs bus autonomes grâce à la conception et la modélisation 3D des modules de transport.</p>
+                    <a href="mailto:aline.rose@edu.univ-fcomte.fr" class="member-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        aline.rose
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-member-card bento-style">
+                <div class="member-avatar">
+                    <img src="" alt="Ambre Monamy" />
+                </div>
+                <div class="member-info">
+                    <h2>Ambre Monamy</h2>
+                    <h3 class="member-role">Responsable Communication & RP</h3>
+                    <p class="member-desc">Gère les relations publiques, la stratégie éditoriale et la communication externe pour faire rayonner le projet auprès des acteurs publics et des futurs usagers.</p>
+                    <a href="mailto:ambre.monamy@edu.univ-fcomte.fr" class="member-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        ambre.monamy
+                    </a>
+                </div>
+            </div>
+
+            <div class="team-member-card bento-style">
+                <div class="member-avatar">
+                    <img src="" alt="Tania André" />
+                </div>
+                <div class="member-info">
+                    <h2>Tania André</h2>
+                    <h3 class="member-role">Stratégie Branding & Communication</h3>
+                    <p class="member-desc">Façonne l'identité visuelle de la marque GoLink, crée les supports de campagne et s'assure de la cohérence de l'image sur tous les points de contact.</p>
+                    <a href="mailto:tania.andre@edu.univ-fcomte.fr" class="member-email">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        tania.andre
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    :global(body) { background-color: #e8e8e8; margin: 0; padding: 0; }
+
+    .bento-style {
+        background-color: #ffffff;
+        border-radius: 18px;
+        border: 1px solid rgba(40, 50, 118, 0.08);
+    }
+
+    .team-section {
+        width: 100vw;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 10px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* --- EN-TÊTE --- */
+    .team-header-bento {
+        padding: 60px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.02);
+    }
+
+    .team-title {
+        font-size: 3.5rem;
+        color: #283276;
+        margin: 0 0 16px 0;
+        letter-spacing: -0.04em;
+    }
+
+    .team-subtitle {
+        font-size: 1.15rem;
+        color: rgba(40, 50, 118, 0.7);
+        margin: 0 auto;
+        line-height: 1.6;
+        max-width: 700px;
+    }
+
+    /* --- GRILLE DES MEMBRES --- */
+    .team-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    /* --- CARTE MEMBRE --- */
+    .team-member-card {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* L'avatar (rond gris en attendant tes images) */
+    .member-avatar {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background-color: #f4f5f7;
+        margin-bottom: 24px;
+        overflow: hidden;
+        border: 4px solid #ffffff;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .member-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Cache l'icône d'image cassée si le fichier n'existe pas encore */
+        color: transparent;
+    }
+
+    .member-info h2 {
+        font-size: 1.8rem;
+        color: #283276;
+        margin: 0 0 8px 0;
+        letter-spacing: -0.02em;
+    }
+
+    .member-role {
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #E5BDED;
+        margin: 0 0 16px 0;
+        font-weight: 700;
+    }
+
+    .member-desc {
+        font-size: 1rem;
+        color: rgba(40, 50, 118, 0.7);
+        line-height: 1.6;
+        margin: 0 0 24px 0;
+        flex-grow: 1; /* Pousse l'email vers le bas si le texte est court */
+    }
+
+    /* Le bouton Email */
+    .member-email {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background-color: #f4f5f7;
+        color: #283276;
+        text-decoration: none;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        transition: background-color 0.2s ease, color 0.2s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .member-email svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .member-email:hover {
+        background-color: #283276;
+        color: #ffffff;
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1024px) {
+        .team-grid { grid-template-columns: 1fr; }
+        .team-header-bento { padding: 40px 20px; }
+        .team-title { font-size: 2.5rem; }
+    }
+</style>
