@@ -1,13 +1,476 @@
 ---
-// src/pages/index.astro
+// src/pages/avantages.astro
 import MainLayout from '../layouts/MainLayout.astro';
+import Header from '../components/global/Header.astro';
+import BentoGrid from '../components/ui/BentoGrid.astro';
+import BentoItem from '../components/ui/BentoItem.astro';
 ---
 
 <MainLayout title="Avantages - GOLink">
+    <Header slot="header" />
 
-    <section style="padding: 4rem; text-align: center;">
-        <h1>Bienvenue sur GOLink 🚌</h1>
-        <p>Le futur des bus modulables.</p>
+    <section class="hero-section">
+        <div class="hero-bento bento-style">
+
+            <div class="hero-text">
+                <h1>Avantages pour l'utilisateur</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+            <div class="hero-image-container">
+                <img src="/images/profil_sans_perspective.png" alt="Module GOLink" class="hero-image" />
+            </div>
+
+        </div>
     </section>
 
+    <section class="benefits-grid-section">
+        <BentoGrid>
+
+            <BentoItem col={6} accent="lightblue">
+                <div class="benefit-card-content">
+                    <h3>Impact Écologique</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+            </BentoItem>
+
+            <BentoItem col={6} accent="yellow">
+                <div class="benefit-card-content">
+                    <h3>Optimisation du trafic</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+            </BentoItem>
+
+            <BentoItem col={6} accent="purple">
+                <div class="benefit-card-content">
+                    <h3>Modularité totale</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+            </BentoItem>
+
+            <BentoItem col={6} accent="darkblue">
+                <div class="benefit-card-content">
+                    <h3>Coûts réduits</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                </div>
+            </BentoItem>
+
+        </BentoGrid>
+    </section>
+
+    <section class="city-map-section">
+        <div class="city-map-container bento-style" id="map-trigger">
+
+            <h2 class="map-title">Avantages pour la ville</h2>
+
+            <div class="roads-wrapper">
+                <div class="road road-red"></div>
+                <div class="road road-green"></div>
+                <div class="road road-blue"></div>
+            </div>
+
+            <div class="map-card card-top-left">
+                <div class="card-accent" style="background-color: #87CEFA;"></div>
+                <h3>Impact Écologique</h3>
+                <p>Réduction des émissions de CO2 en évitant les trajets à vide. Une solution durable pour respirer.</p>
+            </div>
+
+            <div class="map-card card-top-right">
+                <div class="card-accent" style="background-color: #FFEC83;"></div>
+                <h3>Optimisation du trafic</h3>
+                <p>Fluidification de la circulation urbaine grâce au regroupement intelligent des demandes proches.</p>
+            </div>
+
+            <div class="map-card card-bottom-left">
+                <div class="card-accent" style="background-color: #B19CD9;"></div>
+                <h3>Modularité totale</h3>
+                <p>Capacité augmentée instantanément aux heures de pointe sans nécessiter de chauffeurs supplémentaires.</p>
+            </div>
+
+            <div class="map-card card-bottom-right">
+                <div class="card-accent" style="background-color: #283276;"></div>
+                <h3>Coûts réduits</h3>
+                <p>Une flotte gérée dynamiquement qui réduit les frais de maintenance et l'usure de la voirie.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="eco-plant-section">
+        <div class="eco-plant-container bento-style" id="plant-trigger">
+
+            <h2 class="plant-title">Avantages environnementaux</h2>
+
+            <div class="plant-drawing-area">
+
+                <div class="plant-svg-wrapper">
+                    <svg width="100%" height="100%" viewBox="0 0 605 570" preserveAspectRatio="xMidYMid meet" fill="none" xmlns="http://www.w3.org/2000/svg" class="plant-svg">
+                        <path class="plant-path stem" d="M320.501 552C324.168 532.167 326.101 482.2 304.501 441C277.501 389.5 298.001 85.0002 377.001 17.5002" stroke="#4CAF50" stroke-width="35" stroke-linecap="round"/>
+                        <path class="plant-path branch branch-br" d="M304.501 436.5C301.335 422.667 303.401 391.2 337.001 376C379.001 357 514.501 422 560.501 408" stroke="#4CAF50" stroke-width="24" stroke-linecap="round"/>
+                        <path class="plant-path branch branch-bl" d="M304.501 436.983C303.335 421.149 289.501 383.683 243.501 360.483C186.001 331.483 46.5012 401.483 12.0012 350.483" stroke="#4CAF50" stroke-width="24" stroke-linecap="round"/>
+                        <path class="plant-path branch branch-tr" d="M300.501 229C303.668 216.667 333.501 189.9 349.501 173.5C369.501 153 441.001 173 473.001 146C505.001 119 562.001 72.5003 592.501 78.5003" stroke="#4CAF50" stroke-width="24" stroke-linecap="round"/>
+                        <path class="plant-path branch branch-tl" d="M297.501 262.5C295.668 244.834 278.101 202.9 232.501 186.5C175.501 166 127.501 191.5 100.501 158.5C73.5012 125.5 87.0012 87.5002 39.5012 81.0002" stroke="#4CAF50" stroke-width="24" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+                <div class="plant-card card-bl">
+                    <div class="card-accent" style="background-color: #87CEFA;"></div>
+                    <h3>Réduction CO2</h3>
+                    <p>Diminution drastique des émissions de gaz à effet de serre en éliminant la circulation des bus à moitié vides.</p>
+                </div>
+                <div class="plant-card card-br">
+                    <div class="card-accent" style="background-color: #283276;"></div>
+                    <h3>Réseau durable</h3>
+                    <p>Une flotte gérée dynamiquement qui s'adapte en temps réel, réduisant l'usure des routes.</p>
+                </div>
+                <div class="plant-card card-tl">
+                    <div class="card-accent" style="background-color: #B19CD9;"></div>
+                    <h3>Optimisation énergétique</h3>
+                    <p>Les véhicules sont déployés uniquement là où la demande l'exige, préservant ainsi les batteries.</p>
+                </div>
+                <div class="plant-card card-tr">
+                    <div class="card-accent" style="background-color: #FFEC83;"></div>
+                    <h3>Moins de trajets inutiles</h3>
+                    <p>Fini les détours et les arrêts fantômes. Le système regroupe intelligemment les usagers.</p>
+                </div>
+            </div>
+            <div class="soil-layer"></div>
+        </div>
+    </section>
 </MainLayout>
+
+<style>
+    :global(body) { background-color: #e8e8e8; margin: 0; padding: 0; }
+
+    .bento-style {
+        background-color: #ffffff;
+        border-radius: 18px;
+        border: 1px solid rgba(40, 50, 118, 0.08);
+    }
+
+    /* =========================================
+       SECTION 1 : HERO
+       ========================================= */
+    .hero-section {
+        width: 100vw;
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .hero-bento {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        padding: 60px !important;
+        align-items: center;
+        min-height: 60vh;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+        color: #283276;
+        margin: 0 0 24px 0;
+        line-height: 1.1;
+        letter-spacing: -0.05em;
+    }
+
+    .hero-text p {
+        font-size: 1.15rem;
+        color: rgba(40, 50, 118, 0.7);
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    .hero-image-container {
+        background-color: #f8f9fa;
+        border-radius: 24px;
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 1px solid rgba(40, 50, 118, 0.05);
+    }
+
+    .hero-image {
+        width: 120%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* =========================================
+       SECTION 2 : GRILLE BÉNÉFICES
+       ========================================= */
+    .benefits-grid-section {
+        width: 100vw;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .benefit-card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .benefit-card-content h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #283276;
+        letter-spacing: -0.02em;
+    }
+
+    .benefit-card-content p {
+        margin: 0;
+        color: rgba(40, 50, 118, 0.7);
+        line-height: 1.5;
+        font-size: 1rem;
+    }
+
+    /* =========================================
+       SECTION 4 : CARTE VUE DU DESSUS
+       ========================================= */
+    .city-map-section {
+        width: 100vw;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .city-map-container {
+        position: relative;
+        width: 100%;
+        height: 800px;
+        background-color: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(40, 50, 118, 0.08);
+    }
+
+    .map-title {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        font-size: 2.5rem;
+        color: #283276;
+        margin: 0;
+        letter-spacing: -0.03em;
+    }
+
+    .roads-wrapper {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; overflow: hidden;
+    }
+
+    .road {
+        position: absolute;
+        background-color: #333333;
+        height: 80px;
+        top: 50%; left: 50%;
+        margin-top: -40px;
+        transition: width 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .road::after {
+        content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 4px; background: repeating-linear-gradient(90deg, transparent, transparent 24px, rgba(255,255,255,0.4) 24px, rgba(255,255,255,0.4) 48px); transform: translateY(-50%);
+    }
+
+    .road-red { width: 0; margin-left: -100vw; transform: rotate(-15deg); z-index: 2; }
+    .road-green { width: 0; transform-origin: left center; transform: rotate(-15deg) translateX(-20vw) rotate(-90deg); z-index: 1; }
+    .road-blue { width: 0; transform-origin: left center; transform: rotate(-15deg) translateX(20vw) rotate(90deg); z-index: 1; }
+
+    #map-trigger.is-animated .road-red { width: 200vw; }
+    #map-trigger.is-animated .road-green { width: 100vw; transition-delay: 0.4s; }
+    #map-trigger.is-animated .road-blue { width: 100vw; transition-delay: 0.6s; }
+
+    .map-card {
+        position: absolute;
+        width: 320px; background-color: #ffffff; border-radius: 18px; padding: 30px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06); border: 1px solid rgba(40, 50, 118, 0.05); z-index: 5; overflow: hidden;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .card-accent { position: absolute; top: 0; left: 0; width: 100%; height: 6px; }
+    .map-card h3 { margin: 0 0 12px 0; font-size: 1.3rem; color: #283276; }
+    .map-card p { margin: 0; font-size: 0.95rem; color: rgba(40, 50, 118, 0.7); line-height: 1.5; }
+
+    .card-top-left { top: 30%; left: 4%; }
+    .card-top-right { top: 24%; right: 25%; }
+    .card-bottom-left { bottom: 12%; left: 30%; }
+    .card-bottom-right { bottom: 18%; right: 2%; }
+
+    #map-trigger.is-animated .map-card { opacity: 1; transform: translateY(0); }
+    #map-trigger.is-animated .card-top-left { transition-delay: 0.8s; }
+    #map-trigger.is-animated .card-top-right { transition-delay: 1.0s; }
+    #map-trigger.is-animated .card-bottom-left { transition-delay: 1.2s; }
+    #map-trigger.is-animated .card-bottom-right { transition-delay: 1.4s; }
+
+
+    /* =========================================
+       SECTION 5 : LA PLANTE (Version Finale)
+       ========================================= */
+    .eco-plant-section {
+        width: 100vw;
+        padding: 0 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    .eco-plant-container {
+        position: relative;
+        width: 100%;
+        min-height: 800px;
+        background-color: #ffffff;
+        border-radius: 18px;
+        overflow: hidden;
+        border: 1px solid rgba(40, 50, 118, 0.08);
+        /* 🔴 Pas de padding interne en bas pour que la plante touche */
+    }
+
+    .plant-title {
+        position: absolute;
+        top: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+        font-size: 2.5rem;
+        color: #283276;
+        margin: 0;
+        letter-spacing: -0.03em;
+    }
+
+    /* 🔴 LA ZONE DE DESSIN CORRIGÉE (Invisible, sert d'ancrage) */
+    .plant-drawing-area {
+        position: absolute;
+        /* 1. On la plaque tout en bas */
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        /* 2. On l'agrandit légèrement (passé de 65% à 75%) */
+        width: 75%;
+        height: 75%;
+        aspect-ratio: 605 / 570; /* Force le ratio de ton SVG Figma */
+    }
+
+    .plant-svg-wrapper {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .plant-svg { width: 100%; height: 100%; display: block; }
+
+    .plant-path { stroke-dasharray: 2000; stroke-dashoffset: 2000; }
+
+    #plant-trigger.is-growing .stem { stroke-dashoffset: 0; transition: stroke-dashoffset 2s ease-out; }
+    #plant-trigger.is-growing .branch-bl { stroke-dashoffset: 0; transition: stroke-dashoffset 0.8s ease-out 0.4s; }
+    #plant-trigger.is-growing .branch-br { stroke-dashoffset: 0; transition: stroke-dashoffset 0.8s ease-out 0.8s; }
+    #plant-trigger.is-growing .branch-tl { stroke-dashoffset: 0; transition: stroke-dashoffset 0.8s ease-out 1.2s; }
+    #plant-trigger.is-growing .branch-tr { stroke-dashoffset: 0; transition: stroke-dashoffset 0.8s ease-out 1.6s; }
+
+    /* LES CARTES DE LA PLANTE (Toujours ancrées à .plant-drawing-area) */
+    .plant-card {
+        position: absolute;
+        width: 320px;
+        background-color: #ffffff;
+        border-radius: 18px;
+        padding: 30px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(40, 50, 118, 0.05);
+        z-index: 5;
+        overflow: hidden; /* Coupe les angles carrés de la barre accentuée */
+
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+        transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .plant-card h3 { margin: 0 0 12px 0; font-size: 1.3rem; color: #283276; }
+    .plant-card p { margin: 0; font-size: 0.95rem; color: rgba(40, 50, 118, 0.7); line-height: 1.5; }
+
+    /* 🔴 NOUVELLES COORDONNÉES (Adaptées à la plante agrandie et descendue) */
+    .card-tl { top: 12%; left: 10%; }   /* Haut Gauche */
+    .card-tr { top: 18%; left: 90%; }  /* Haut Droite */
+    .card-bl { top: 61%; left: 3%; }    /* Bas Gauche */
+    .card-br { top: 71%; left: 92%; }   /* Bas Droite */
+
+    #plant-trigger.is-growing .plant-card { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    #plant-trigger.is-growing .card-bl { transition-delay: 1.0s; }
+    #plant-trigger.is-growing .card-br { transition-delay: 1.4s; }
+    #plant-trigger.is-growing .card-tl { transition-delay: 1.8s; }
+    #plant-trigger.is-growing .card-tr { transition-delay: 2.2s; }
+
+    /* --- COUCHE DE TERRE --- */
+    .soil-layer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px; /* Épaisseur du sol */
+        background-color: #8D6E63; /* Marron chaud */
+        border-bottom-left-radius: 18px; /* Correspond à l'arrondi du bento */
+        border-bottom-right-radius: 18px;
+        z-index: 2; /* 🔴 Plus élevé que le SVG (1) pour passer par-dessus */
+        box-shadow: inset 0 10px 10px rgba(0,0,0,0.1); /* Petit effet de profondeur pour la terre */
+    }
+
+
+    /* =========================================
+       RESPONSIVE GLOBAL (Mobiles et Tablettes)
+       ========================================= */
+    @media (max-width: 1024px) {
+        /* Section Hero */
+        .hero-bento { gap: 40px; padding: 40px !important; }
+
+        /* Section Carte */
+        .city-map-container { height: auto; display: flex; flex-direction: column; gap: 20px; padding: 40px !important; }
+        .roads-wrapper { display: none; }
+        .map-title { position: relative; top: 0; left: 0; transform: none; background: transparent; padding: 0; margin-bottom: 20px; text-align: center; font-size: 2rem; }
+        .map-card { position: relative; width: 100%; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; transform: none !important; opacity: 1 !important; transition: none !important; box-shadow: none; border: 1px solid rgba(40, 50, 118, 0.08); box-sizing: border-box; }
+
+        /* Section Plante */
+        .eco-plant-container { height: auto; min-height: auto; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 40px !important; }
+        .plant-drawing-area { position: relative; width: 100%; height: auto; aspect-ratio: auto; top: 0; left: 0; transform: none; display: flex; flex-direction: column; gap: 20px; }
+        .plant-svg-wrapper { display: none; }
+        .plant-title { position: relative; top: 0; transform: none; margin-bottom: 20px; border: none; box-shadow: none; font-size: 2rem; text-align: center; }
+        .plant-card { position: relative; width: 100%; top: 0 !important; left: 0 !important; transform: none !important; opacity: 1 !important; transition: none !important; box-shadow: none; border: 1px solid rgba(40, 50, 118, 0.08); box-sizing: border-box;}
+    }
+
+    @media (max-width: 768px) {
+        .hero-bento { grid-template-columns: 1fr; text-align: center; }
+        .hero-text h1 { font-size: 2.5rem; }
+        .hero-image-container { min-height: 250px; }
+    }
+</style>
+<script>
+    function initAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Pour la carte
+                    if(entry.target.id === 'map-trigger') entry.target.classList.add('is-animated');
+                    // Pour la plante
+                    if(entry.target.id === 'plant-trigger') entry.target.classList.add('is-growing');
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const mapTrigger = document.getElementById('map-trigger');
+        const plantTrigger = document.getElementById('plant-trigger');
+
+        if (mapTrigger) observer.observe(mapTrigger);
+        if (plantTrigger) observer.observe(plantTrigger);
+    }
+
+    document.addEventListener('astro:page-load', initAnimations);
+</script>
