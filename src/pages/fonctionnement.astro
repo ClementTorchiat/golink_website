@@ -17,7 +17,7 @@ import IconText from '../components/ui/IconText.astro';
 
             <div class="hero-text">
                 <h1>L'assemblage dynamique</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <p>Les modules s’assemblent ou se détachent automatiquement selon l’affluence. Ce système ajuste la capacité en temps réel pour supprimer les trajets à vide et économiser l’énergie.</p>
             </div>
 
             <div class="buses-area">
@@ -36,25 +36,25 @@ import IconText from '../components/ui/IconText.astro';
         <div class="modules-bento bento-style">
 
             <div class="modules-text">
-                <h2>Lorem ipsum</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2>Une modularité sur-mesure</h2>
+                <p>GoLink propose des cabines de 4 à 12 places pour s'ajuster précisément à l'affluence réelle. Ces formats variés garantissent un transport fluide, confortable et une accessibilité totale pour tous les passagers.</p>
             </div>
 
             <div class="modules-list">
                 <div class="module-type">
-                    <span class="module-name">Type de bus 1</span>
+                    <span class="module-name">4 places</span>
                     <span class="module-detail">Petite capacité</span>
                 </div>
                 <div class="module-type">
-                    <span class="module-name">Type de bus 2</span>
+                    <span class="module-name">6 places</span>
                     <span class="module-detail">Moyenne capacité</span>
                 </div>
                 <div class="module-type">
-                    <span class="module-name">Type de bus 3</span>
+                    <span class="module-name">10 places</span>
                     <span class="module-detail">Grande capacité</span>
                 </div>
                 <div class="module-type">
-                    <span class="module-name">Type de bus 4</span>
+                    <span class="module-name">12 places</span>
                     <span class="module-detail">Capacité maximale</span>
                 </div>
             </div>
@@ -66,7 +66,7 @@ import IconText from '../components/ui/IconText.astro';
 
         <div class="needs-header bento-style">
             <h2>Adapté aux besoins</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Bien plus qu'un simple bus, GoLink est un système polyvalent conçu pour tous vos usages quotidiens. Grâce à ses modules de 4 à 12 places, il transporte aussi bien vos bagages encombrants et vos courses que vos animaux de compagnie.</p>
         </div>
 
         <BentoGrid>
@@ -74,21 +74,21 @@ import IconText from '../components/ui/IconText.astro';
                     title="Utilisation régulière"
                     color="lightblue"
                     imageUrl="/images/habitants.jpg"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+                    description="Enregistrez votre planning hebdomadaire une seule fois pour automatiser tous vos trajets quotidiens."
             />
 
             <TargetCard
                     title="Utilisation occasionnelle"
                     color="yellow"
                     imageUrl="/images/etudiants.jpg"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+                    description="Indiquez votre itinéraire la veille pour garantir un bus prêt exactement à l'heure souhaitée."
             />
 
             <TargetCard
-                    title="Touriste"
+                    title="Tourisme"
                     color="purple"
                     imageUrl="/images/touristes.jpg"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+                    description="Renseignez votre destination en temps réel pour un déplacement immédiat, sans aucune planification préalable."
             />
         </BentoGrid>
     </section>
@@ -111,8 +111,8 @@ import IconText from '../components/ui/IconText.astro';
             </div>
 
             <div class="app-text-block">
-                <h2>L'application</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <h2>Votre compagnon de mobilité intelligent.</h2>
+                <p>Planifiez vos trajets et suivez les bus en temps réel sur une carte interactive. Intuitive et accessible, l'application anticipe vos besoins pour vous offrir un transport fluide, sur-mesure et sans attente.</p>
                 <div class="btn-wrapper">
                     <Button href="#" variant="primary">Télécharger l'app</Button>
                 </div>
@@ -125,7 +125,7 @@ import IconText from '../components/ui/IconText.astro';
         <div class="horizontal-benefits-grid">
 
             <BentoItem col={3} accent="lightblue">
-                <IconText title="Estimation de l'affluence">
+                <IconText title="Estimation de l'affluence" description="L’application analyse les plannings et les demandes en temps réel pour prévoir précisément le nombre de passagers dans chaque secteur.">
                     <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
@@ -133,7 +133,7 @@ import IconText from '../components/ui/IconText.astro';
             </BentoItem>
 
             <BentoItem col={3} accent="yellow">
-                <IconText title="Ajustement des trajets">
+                <IconText title="Ajustement des trajets" description="Le réseau optimise les itinéraires de manière proactive afin d'assurer une circulation fluide et d'éviter les détours inutiles pour les usagers.">
                     <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4" />
                     </svg>
@@ -141,7 +141,7 @@ import IconText from '../components/ui/IconText.astro';
             </BentoItem>
 
             <BentoItem col={3} accent="purple">
-                <IconText title="Dispatch intelligent des bus">
+                <IconText title="Dispatch intelligent des bus" description="Le système gère l'envoi et l'assemblage des modules autonomes pour garantir une capacité toujours adaptée à la demande effective du réseau.">
                     <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                     </svg>
@@ -149,7 +149,7 @@ import IconText from '../components/ui/IconText.astro';
             </BentoItem>
 
             <BentoItem col={3} accent="darkblue">
-                <IconText title="Points d'attente dynamiques">
+                <IconText title="Points d'attente dynamiques" description="Fini les arrêts fixes, l’interface oriente chaque voyageur vers un lieu de prise en charge optimal calculé selon la position des bus et l'état du trafic.">
                     <svg slot="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                     </svg>
@@ -203,7 +203,7 @@ import IconText from '../components/ui/IconText.astro';
 </script>
 
 <style>
-    :global(body) { background-color: #e8e8e8; margin: 0; padding: 0; }
+    :global(body) { background-color: #F4F4F4; margin: 0; padding: 0; }
 
     .bento-style {
         background-color: #ffffff;
