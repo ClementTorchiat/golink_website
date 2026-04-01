@@ -1,46 +1,33 @@
-# Astro Starter Kit: Basics
+# 🚌 GOLink - Le Bus Modulaire de Demain
 
-```sh
-npm create astro@latest -- --template basics
-```
+**GOLink** est une plateforme web moderne présentant un concept de mobilité urbaine révolutionnaire : des bus autonomes, 100 % électriques et modulables qui s'assemblent en temps réel selon l'affluence.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Version Desktop](public/images/social-preview.jpg)
 
-## 🚀 Project Structure
+## 🚀 Concept
+L'objectif de GOLink est de mettre fin aux trajets à vide et de fluidifier le trafic urbain. Grâce à une application intelligente, le réseau anticipe les besoins des usagers et dispatch des modules de 4 à 12 places qui peuvent se coupler dynamiquement.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠️ Stack Technique
+
+Ce projet a été développé avec une attention particulière portée à la performance et à l'expérience utilisateur (UX/UI).
+
+* **Framework :** [Astro 4.x](https://astro.build/) (Utilisation de l'architecture en îles et du ClientRouter).
+* **Composants :** Architecture basée sur des composants Astro réutilisables.
+* **Stylisation :** CSS natif (Modern CSS) avec un système de grille de type "Bento Grid".
+* **Animations :** Intersection Observer API pour les déclenchements au scroll et transitions fluides.
+* **Typographie :** Funnel Sans & Funnel Display.
+
+## 📦 Structure du Projet
+
+Le projet suit la structure standard d'Astro :
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+├── public/              # Assets statiques (Images, Favicons)
+├── src/
+│   ├── components/      # Composants UI (Buttons, BentoGrid, Cards)
+│   │   ├── global/      # Header, Footer
+│   │   └── ui/          # Éléments d'interface réutilisables
+│   ├── layouts/         # Layout principal (SEO, Metadata, Google Fonts)
+│   └── pages/           # Pages du site (Accueil, Fonctionnement, Avantages)
+└── astro.config.mjs     # Configuration du framework
