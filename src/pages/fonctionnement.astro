@@ -301,7 +301,18 @@ import IconText from '../components/ui/IconText.astro';
 
     @media (max-width: 768px) {
         .hero-text h1 { font-size: 2.5rem; }
-        .module { width: 120vw; min-width: 600px; bottom: 0; }
+
+        /* On donne un peu plus d'espace au-dessus des bus en réduisant la marge du texte */
+        .hero-text { margin-bottom: 20px; }
+
+        .module {
+            /* 🔴 C'EST ICI LA MAGIE : On passe de 120vw à 180vw, et le min-width à 850px */
+            width: 180vw;
+            min-width: 850px;
+
+            /* On les redescend légèrement pour qu'ils soient bien posés en bas du bento */
+            bottom: -5%;
+        }
     }
 
     /* --- SECTION 2 : PRÉSENTATION DES MODULES --- */
@@ -502,17 +513,60 @@ import IconText from '../components/ui/IconText.astro';
     }
 
     @media (max-width: 768px) {
+        /* --- LAYOUT MOBILE DE L'APP --- */
         .app-bento {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             text-align: center;
+            gap: 0; /* On désactive le gap global pour gérer avec des marges */
+            padding: 40px 20px !important;
         }
-        .app-text-block { margin: 0 auto; }
-        .app-text-block h2 { font-size: 2rem; }
 
-        /* Sur mobile, on affiche le téléphone en entier, ou coupé en bas ? */
-        /* Si tu veux qu'il soit aussi coupé sur mobile : */
-        .app-mockup-block { min-height: 450px; }
-        .phone-skeleton { top: 40px; } /* Laisse un peu de place au-dessus */
+        /* 🔴 L'ASTUCE : On fait "disparaître" la div conteneur pour réordonner ses enfants */
+        .app-text-block {
+            display: contents;
+        }
+
+        /* 1. Le titre passe tout en haut */
+        .app-text-block h2 {
+            order: 1;
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+
+        /* 2. Le téléphone s'insère au milieu et se coupe */
+        .app-mockup-block {
+            order: 2;
+            width: 100%;
+            height: 300px; /* Coupe le téléphone à la moitié */
+            min-height: auto;
+            position: relative;
+            overflow: hidden; /* La fameuse guillotine ! */
+            margin-bottom: 30px;
+        }
+
+        .phone-skeleton {
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto; /* Centre le téléphone parfaitement */
+        }
+
+        /* 3. Le paragraphe vient après l'image */
+        .app-text-block p {
+            order: 3;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        /* 4. Le bouton termine la section */
+        .btn-wrapper {
+            order: 4;
+        }
+
+        /* --- BÉNÉFICES HORIZONTAUX (inchangé) --- */
+        .horizontal-benefits-grid { grid-template-columns: 1fr; }
+        .hero-text p { padding-left: 40px; padding-right: 40px; }
     }
 
     /* --- SECTION 5 : BÉNÉFICES 1x4 --- */
@@ -552,5 +606,9 @@ import IconText from '../components/ui/IconText.astro';
 
     @media (max-width: 768px) {
         .horizontal-benefits-grid { grid-template-columns: 1fr; }
+        .hero-text p {
+            padding-left: 40px;
+            padding-right: 40px;
+        }
     }
 </style>

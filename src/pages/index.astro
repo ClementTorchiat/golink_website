@@ -15,7 +15,7 @@ import Button from '../components/global/Button.astro';
             <div class="hero-content">
                 <div class="text-block">
                     <h1>GOLink<br>Le bus de demain.</h1>
-                    <p>Le concept de bus modulaire optimisé pour les villes intelligentes.</p>
+                    <p>Découvrez GoLink : le bus urbain autonome, 100 % électrique et modulable. Disponible 24h/24, il ajuste sa taille en temps réel selon l'affluence pour mettre fin aux trajets à vide. Une mobilité sur-mesure, écologique et toujours à votre service.</p>
                 </div>
 
                 <div class="image-block">
@@ -27,16 +27,13 @@ import Button from '../components/global/Button.astro';
 
         </div>
     </section>
-    <section class="short-section">
-        <p class="short-text">Découvrez GoLink : le bus urbain autonome, 100 % électrique et modulable. Disponible 24h/24, il ajuste sa taille en temps réel selon l'affluence pour mettre fin aux trajets à vide. Une mobilité sur-mesure, écologique et toujours à votre service.</p>
-    </section>
 
     <section class="benefits-section">
         <div class="section-header">
             <h2>Bénéfices clés</h2>
         </div>
 
-        <BentoGrid>
+        <div class="test-grid">
             <BentoItem col={6} accent="yellow">
                 <IconText
                         title="Optimise les trajets"
@@ -76,7 +73,7 @@ import Button from '../components/global/Button.astro';
                     </svg>
                 </IconText>
             </BentoItem>
-        </BentoGrid>
+        </div>
     </section>
 
     <section class="target-section">
@@ -141,16 +138,23 @@ import Button from '../components/global/Button.astro';
 </MainLayout>
 
 <style>
+    .test-grid {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
     .hero-section {
         padding: 10px; /* Ta demande */
         width: 100vw;
         /* On force la page à au moins remplir l'écran pour le hero */
         min-height: 100vh;
+        margin-bottom: 64px;
     }
 
     .hero-container {
         background-color: #ffffff; /* Ton bleu foncé principal, monotone */
-        color: #000000;
+        color: #283276;
         height: calc(100vh - 20px); /* 100vh moins padding haut/bas de 10px */
         border-radius: 18px; /* Standard 18px */
         overflow: hidden;
@@ -184,7 +188,7 @@ import Button from '../components/global/Button.astro';
 
     p {
         font-size: 1.1rem;
-        color: rgba(0, 0, 0, 0.8);
+        color: rgba(40, 50, 118, 0.7);
         margin: 0;
         line-height: 1.4;
     }
@@ -316,6 +320,9 @@ import Button from '../components/global/Button.astro';
 
     /* Responsive (sur mobile, ça s'assemble du haut vers le bas) */
     @media (max-width: 768px) {
+        .hero-content { display: flex; flex-direction: column-reverse; }
+        .hero-content .text-block h1 { font-size: 3rem }
+        .test-grid { flex-direction: column;}
         .assembly-container { flex-direction: column; gap: 40px; }
         .module-left { transform: translateY(-50px); }
         .module-right { transform: translateY(50px); }

@@ -119,6 +119,35 @@ const finalImage = imageUrl || `/images/${title.toLowerCase()}.jpg`;
         opacity: 1;
     }
 
-    @media (max-width: 1024px) { .target-card { grid-column: span 6 !important; } }
-    @media (max-width: 768px) { .target-card { grid-column: span 12 !important; height: 300px; } }
+    /* --- RESPONSIVE : Affichage permanent sur Tablettes & Mobiles --- */
+    @media (max-width: 1024px) {
+        .target-card {
+            grid-column: span 6 !important;
+        }
+
+        /* On force la description à être ouverte */
+        .description-wrapper {
+            grid-template-rows: 1fr;
+        }
+
+        /* On force le texte à être visible */
+        p {
+            opacity: 1;
+        }
+
+        /* Optionnel : on désactive le zoom de l'image pour éviter les bugs au clic */
+        .target-card:hover .bg-image {
+            transform: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .target-card {
+            grid-column: span 12 !important;
+            height: auto;
+            /* 🔴 L'ASTUCE : On force 220px d'espace vide en haut pour garantir que l'image soit vue */
+            padding-top: 220px;
+            min-height: auto; /* Plus besoin de min-height avec le padding */
+        }
+    }
 </style>

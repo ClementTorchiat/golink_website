@@ -178,6 +178,10 @@ import Button from './Button.astro';
         text-decoration: underline;
     }
 
+    @media (max-width: 1024px) {
+        .emails-list a { font-size: 1rem; }
+    }
+
     /* Responsive Mobile */
     @media (max-width: 768px) {
         .footer-bento {
@@ -189,9 +193,8 @@ import Button from './Button.astro';
         .footer-main { grid-column: 1 / 2; grid-row: 1 / 2; }
         .footer-nav { grid-column: 1 / 2; grid-row: 2 / 3; }
         .footer-contact { grid-column: 1 / 2; grid-row: 3 / 4; align-self: flex-start; text-align: left;}
-        .copyright { grid-column: 1 / 2; grid-row: 4 / 5; align-self: flex-start; }
+        .copyright { display: grid; grid-column: 1 / 2; grid-row: 4 / 5; align-self: flex-start; gap: 4px; }
 
         .footer-main h2 { font-size: 2rem; }
-        .emails-list a { font-size: 0.75rem; }
     }
 </style>
