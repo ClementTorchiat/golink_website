@@ -20,7 +20,7 @@ import Button from '../components/global/Button.astro';
 
                 <div class="image-block">
                     <div class="image-placeholder">
-                        BUS MODULE MOCKUP
+                        <video src="/images/Video_SansSon.mp4" autoplay loop muted playsinline></video>
                     </div>
                 </div>
             </div>
@@ -145,23 +145,22 @@ import Button from '../components/global/Button.astro';
     }
 
     .hero-section {
-        padding: 10px; /* Ta demande */
+        padding: 10px;
         width: 100vw;
-        /* On force la page à au moins remplir l'écran pour le hero */
         min-height: 100vh;
         margin-bottom: 64px;
     }
 
     .hero-container {
-        background-color: #ffffff; /* Ton bleu foncé principal, monotone */
+        background-color: #ffffff;
         color: #283276;
-        height: calc(100vh - 20px); /* 100vh moins padding haut/bas de 10px */
-        border-radius: 18px; /* Standard 18px */
+        height: calc(100vh - 20px);
+        border-radius: 18px;
         overflow: hidden;
         position: relative;
         display: flex;
-        align-items: flex-end; /* Texte en bas comme Worklouder */
-        padding: 40px; /* Espacement interne compact */
+        align-items: stretch;
+        padding: 40px;
         border: 1px solid rgba(40, 50, 118, 0.08);
     }
 
@@ -171,12 +170,16 @@ import Button from '../components/global/Button.astro';
         margin: 0 auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px; /* Gap compact */
-        align-items: flex-end;
+        gap: 40px;
+        align-items: stretch;
     }
 
     .text-block {
         max-width: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 20px;
     }
 
     h1 {
@@ -194,15 +197,21 @@ import Button from '../components/global/Button.astro';
     }
 
     .image-placeholder {
-        background-color: rgba(255, 255, 255, 0.05); /* Monotone technique */
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        height: 300px;
-        border-radius: 18px; /* Standard 18px */
+        background-color: #f8f9fa;
+        border: 1px solid rgba(40, 50, 118, 0.05);
+        margin-top: 80px;
+        height: calc(100% - 80px);
+        border-radius: 18px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: rgba(255, 255, 255, 0.3);
-        font-weight: bold;
+        overflow: hidden;
+    }
+
+    .image-placeholder video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .short-section {
@@ -221,16 +230,16 @@ import Button from '../components/global/Button.astro';
         text-align: center;
         margin: auto;
     }
-    /* Dans la balise <style> de index.astro */
+
     .benefits-section {
-        width: 100vw; /* Prend tout l'écran */
-        padding: 0 10px; /* Aligne les boîtes exactement comme le hero */
+        width: 100vw;
+        padding: 0 10px;
         margin-bottom: 64px;
     }
 
     .section-header {
         margin-bottom: 24px;
-        padding-left: 10px; /* Petit espace pour aligner le titre H2 avec le texte du Hero */
+        padding-left: 10px;
     }
 
     .section-header h2 {
@@ -250,19 +259,18 @@ import Button from '../components/global/Button.astro';
     .assembly-section {
         width: 100vw;
         padding: 0 10px;
-        margin-bottom: 10px; /* BOOM ! Plus que 10px avant le footer */
+        margin-bottom: 10px;
         overflow-x: hidden;
     }
 
     .assembly-container {
-        width: 100%; /* <-- MODIFIÉ : Remplace le max-width par 100% */
+        width: 100%;
         display: flex;
         align-items: stretch;
         gap: 60px;
         position: relative;
     }
 
-    /* Le style Bento des deux modules */
     .module-card {
         flex: 1;
         background-color: #ffffff;
@@ -274,7 +282,6 @@ import Button from '../components/global/Button.astro';
         justify-content: center;
         gap: 16px;
 
-        /* État de départ pour l'animation (Invisible et décalé) */
         opacity: 0;
         transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
     }
@@ -286,7 +293,6 @@ import Button from '../components/global/Button.astro';
     .module-card p { margin: 0; font-size: 1rem; color: rgba(40, 50, 118, 0.7); line-height: 1.5; }
     .btn-wrapper { margin-top: 8px; }
 
-    /* L'étincelle au centre */
     .sparks {
         position: absolute;
         left: 50%;
@@ -294,7 +300,7 @@ import Button from '../components/global/Button.astro';
         transform: translate(-50%, -50%) scale(0);
         display: flex;
         flex-direction: column;
-        gap: 6px; /* <-- MODIFIÉ : Un peu plus serré pour 5 éclairs */
+        gap: 6px;
         z-index: 10;
         opacity: 0;
         transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s, opacity 0.4s ease 0.5s;
@@ -303,22 +309,19 @@ import Button from '../components/global/Button.astro';
     .sparks svg {
         width: 28px;
         height: 28px;
-        /* --- AJOUT : Rotation de 90deg vers la droite --- */
         transform: rotate(90deg);
     }
 
-    /* --- LES ÉTATS ACTIFS (Quand l'utilisateur scrolle sur la section) --- */
     .assembly-container.is-assembled .module-card {
-        transform: translateX(0); /* Ils viennent se coller à leur place */
+        transform: translateX(0);
         opacity: 1;
     }
 
     .assembly-container.is-assembled .sparks {
-        transform: translate(-50%, -50%) scale(1); /* L'éclair pop au milieu ! */
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
 
-    /* Responsive (sur mobile, ça s'assemble du haut vers le bas) */
     @media (max-width: 768px) {
         .hero-content { display: flex; flex-direction: column-reverse; }
         .hero-content .text-block h1 { font-size: 3rem }
@@ -327,7 +330,6 @@ import Button from '../components/global/Button.astro';
         .module-left { transform: translateY(-50px); }
         .module-right { transform: translateY(50px); }
         .assembly-container.is-assembled .module-card { transform: translateY(0); }
-        /* L'étincelle pivote pour pointer vers le bas */
         .sparks { transform: translate(-50%, -50%) rotate(90deg) scale(0); }
         .assembly-container.is-assembled .sparks { transform: translate(-50%, -50%) rotate(90deg) scale(1); }
     }
